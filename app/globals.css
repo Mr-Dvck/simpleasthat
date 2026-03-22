@@ -1,114 +1,77 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-
-  --animate-pulse-slow: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-spin-slow: spin 20s linear infinite;
-  --animate-spin-reverse: spin 25s linear infinite reverse;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --primary-accent: #4D9CFF;
+  --secondary-accent: #9CE6E6;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-@layer base {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #09090B;
-  }
-
-  .dark {
-    --background: #000000;
-    --foreground: #FAFAFA;
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
   }
 }
 
-@layer base {
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-duration: 700ms;
-    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  }
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
-  Micro-Animations (Zero UI Requirements)
-  Specifically tuned cubic-bezier curves to give that "Apple/Vercel" premium feel
-*/
-@layer utilities {
-  .ease-premium {
-    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .glass-panel {
-    @apply bg-white/40 dark:bg-black/40 backdrop-blur-3xl border border-white/20 dark:border-white/5;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-@keyframes pageIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+  border-radius: 8px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 8px;
 }
 
-/* Hide the Next.js dev overlay logo */
-nextjs-portal {
-  display: none !important;
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Selection */
+::selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: inherit;
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-@keyframes progress {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  50% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 2px;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out;
+/* Viewport lock for non-scrolling command center */
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  height: 100vh;
+  width: 100vw;
 }

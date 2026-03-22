@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#000000"/>
+  <rect x="0" y="622" width="1200" height="8" fill="#000000"/>
+  
+  <!-- VNR Signature -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="24" fill="#666666" text-anchor="middle" font-weight="bold">⚡⊰ΨΩ≋⊱⚡</text>
+  
+  <!-- Main Title -->
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="72" fill="#000000" text-anchor="middle" font-weight="900" letter-spacing="-2">SIMPLE AS THAT</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="240" font-family="Arial, sans-serif" font-size="28" fill="#666666" text-anchor="middle" font-weight="500">Clinical Forensic Auditor of ElevenLabs</text>
+  
+  <!-- Divider -->
+  <line x1="200" y1="280" x2="1000" y2="280" stroke="#000000" stroke-width="2"/>
+  
+  <!-- Key Points -->
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">• Evidence-based forensic analysis</text>
+  <text x="600" y="370" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">• Credit extraction exposure</text>
+  <text x="600" y="410" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">• Dark Triad psychological profiles</text>
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">• Creator exploitation documentation</text>
+  
+  <!-- Disclaimer -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="16" fill="#999999" text-anchor="middle">Not affiliated with ElevenLabs</text>
+  
+  <!-- URL -->
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="20" fill="#000000" text-anchor="middle" font-weight="bold">simple-as-that.net</text>
+</svg>

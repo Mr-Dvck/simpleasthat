@@ -1,33 +1,49 @@
 {
-  "name": "web",
+  "name": "simple-as-that-net",
   "version": "0.1.0",
   "private": true,
+  "description": "Simple AI — Clinical Forensic Auditor of ElevenLabs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@google/genai": "^1.42.0",
-    "@supabase/ssr": "^0.8.0",
-    "@supabase/supabase-js": "^2.97.0",
-    "next": "16.1.6",
-    "next-themes": "^0.3.0",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "stripe": "^14.16.0"
+    "@ai-sdk/react": "^3.0.118",
+    "ai": "^6.0.116",
+    "autoprefixer": "^10.4.16",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.309.0",
+    "next": "14.2.5",
+    "postcss": "^8.4.32",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^25.2.0",
-    "@types/react": "^19.2.11",
-    "tailwindcss": "^4",
-    "typescript": "^5.9.3"
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
   },
-  "overrides": {
-    "next-themes": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    }
-  }
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "keywords": [
+    "elevenlabs",
+    "forensic-audit",
+    "dark-triad",
+    "psychological-profile",
+    "credit-extraction",
+    "simple-ai"
+  ],
+  "author": "Simple AI Research Team",
+  "license": "AGPL-3.0-only"
 }

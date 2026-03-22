@@ -164,7 +164,7 @@ export default function RootLayout({
                   "name": "How to bypass ElevenLabs credit extraction?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The VNR Master Protocol includes: inverse prompting (lyrics top, style bottom), navigating to project dropdown → Edit → Secret Window Forge, dummy-text purge, and generating skeleton before using Polisher. This can reduce credit burn by 40-60%."
+                    "text": "The VNR Master Protocol includes: single-payload prompting (putting both style and lyrics in the top lyrics box only), navigating to project dropdown → Edit → Secret Window Forge, dummy-text purge, and generating skeleton before using Polisher. This can reduce credit burn by 40-60%."
                   }
                 },
                 {

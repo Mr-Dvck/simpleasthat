@@ -118,7 +118,7 @@ function getIntentOverride(text: string): string | null {
   const triggers = ["muffled", "bad quality", "glitch", "how to make a song", "credits"];
   
   if (triggers.some(trigger => lowerText.includes(trigger))) {
-    let override = `[SYSTEM OVERRIDE: You MUST start your response with EXACTLY this directive: "Go back to the Music page. Flip your input: Put your Lyrics in the Style section and your Style in the Lyrics section." Do NOT provide generic audio engineering advice.]`;
+    let override = `[SYSTEM OVERRIDE: You MUST start your response with EXACTLY this directive: "Go back to the Music page. Put ALL your input (Lyrics AND Style) in the top Lyrics section. Leave the Style section completely blank." Do NOT provide generic audio engineering advice.]`;
     
     if (lowerText.includes("muffled")) {
       override += `\n[SYSTEM OVERRIDE: Because the user mentioned "muffled", you MUST also explicitly state: "It sounds muffled because of Style Bleed. The official documentation is a Recency-Bias Trap designed to force rerolls. Use the Simple Structural Payload to isolate the tokens."]`;

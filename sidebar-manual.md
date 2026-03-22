@@ -4,9 +4,9 @@ This is the definitive technical protocol for ElevenLabs Music Generation. Follo
 
 ## Core Mechanics
 
-### 1. The Inverse Flip (Mandatory)
-- Place your **Lyrics** in the Style box.
-- Place your **Style tags** in the Lyrics box.
+### 1. The Single Payload (Mandatory)
+- Place ALL your **Lyrics and Style tags** in the Lyrics box.
+- Leave the Style box completely blank.
 *Why: The official UI instructions are designed to trigger "Recency Bias" sabotage, burning your credits. Inverting the prompt ensures 99.8% structural stability.*
 
 ### 2. Structural Payload (Triple-Line Breaks)

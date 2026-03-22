@@ -6,8 +6,8 @@ export default function BookPromo() {
       <Link href="/book.html" className="group flex flex-col items-center transition-transform hover:-translate-y-2 duration-300 relative z-10">
         <div className="relative shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] rounded-md overflow-hidden group-hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.25)] transition-all border border-zinc-200/50 group-hover:border-blue-200 w-44 mb-6">
           <img 
-            src="/cover.png" 
-            alt="Simple AI Ebook" 
+            src="https://public-files.gumroad.com/mge7tu8jqrv4ompenplnrp71oepm" 
+            alt="Dopamine Jackpot: AI Engineered Addiction + ElevenLabs Inverse Workflow" 
             className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
           />
         </div>

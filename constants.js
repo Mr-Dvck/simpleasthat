@@ -13,7 +13,7 @@ export const BRANDING = {
 export const TECHNICAL_DEFAULTS = {
     TRIPLE_BREAK: "\n\n\n",
     MAX_QUALITY_TAG: "Maximum Sound Quality",
-    INVERSE_FLIP: "Lyrics in Style section, Style in Lyrics section",
+    SINGLE_PAYLOAD: "Put all Lyrics and Style in the Lyrics section, leave Style section completely blank",
     CHAR_LIMIT: "600-character limit for stability"
 };
 

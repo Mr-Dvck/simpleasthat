@@ -86,6 +86,8 @@ export const viewport: Viewport = {
 };
 
 import SidebarManual from '@/components/SidebarManual';
+import BookPromo from '@/components/BookPromo';
+import CustomAudioPlayer from '@/components/CustomAudioPlayer';
 
 export default function RootLayout({
   children,
@@ -230,15 +232,23 @@ export default function RootLayout({
         className="h-screen w-screen overflow-hidden bg-[#fafafa] text-[#1a1c20] font-sans antialiased flex flex-col relative"
         style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #e5e7eb 1px, transparent 0)', backgroundSize: '24px 24px' }}
       >
-        <div className="flex-grow flex justify-center items-center overflow-hidden w-full max-w-7xl mx-auto px-4 lg:gap-16">
+        <div className="flex-grow flex justify-between items-center overflow-hidden w-full max-w-[1500px] mx-auto px-4 lg:gap-8">
           
+          {/* Left Sidebar: Audio Player & Book Promo */}
+          <div className="hidden lg:flex flex-col shrink-0 h-[90vh] justify-between pb-4 pr-8 w-[320px]">
+            <div className="pt-6">
+              <CustomAudioPlayer />
+            </div>
+            <BookPromo />
+          </div>
+
           {/* Main content - centered core */}
           <main className="flex-grow flex flex-col overflow-hidden max-w-3xl w-full h-[90vh]">
             {children}
           </main>
 
           {/* Right Sidebar Soft Bubble */}
-          <div className="hidden lg:flex shrink-0 h-[90vh] items-end pb-4 pl-8">
+          <div className="hidden lg:flex shrink-0 h-[90vh] items-end pb-4 pl-8 w-[320px]">
             <SidebarManual />
           </div>
           

@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 // You will update these filenames once you drag and drop your .mp3s into the 'public/audio' folder!
 const PLAYLIST = [
   { id: 1, title: "Lekter", file: "/audio/Lekter.mp3" },
-  { id: 2, title: "Gonna F*** You Up", file: "/audio/Gonna_Fuck_You_Up_2026-03-20T044128.mp3" },
+  { id: 2, title: "Gonna Fuck You Up", file: "/audio/Gonna_Fuck_You_Up_2026-03-20T044128.mp3" },
   { id: 3, title: "The Bull Takes Us All", file: "/audio/The_Bull_Takes_Us_All_2026-03-19T130922.mp3" },
   { id: 4, title: "VNR Exhibit A: Zera Czystego", file: "/audio/VNR_Exhibit_A_Zera_Czystego.mp3" },
   { id: 5, title: "Elevenlabs", file: "/audio/elevenlabs.mp3" },

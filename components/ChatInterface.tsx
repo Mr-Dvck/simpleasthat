@@ -181,7 +181,7 @@ export default function ChatInterface() {
           <span className="text-xs font-semibold tracking-widest text-emerald-600">LIVE</span>
         </div>
         <div className="text-[10px] font-mono bg-zinc-100 text-zinc-500 px-2.5 py-0.5 rounded">
-          Qwen 2.5 72B
+          Simple V.2
         </div>
       </div>
 

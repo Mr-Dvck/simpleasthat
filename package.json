@@ -1,8 +1,8 @@
 {
-  "name": "simple-as-that-net",
-  "version": "0.1.0",
+  "name": "simple-as-that-casino",
+  "version": "1.0.0",
   "private": true,
-  "description": "Simple AI — Clinical Forensic Auditor of ElevenLabs",
+  "description": "Simple As That Casino - The Ultimate Provably Fair Web3 Crypto Casino (simple-as-that.net)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

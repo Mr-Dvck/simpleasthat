@@ -11,25 +11,6 @@ const nextConfig = {
       },
     ],
   },
-  // Ensure middleware runs
-  experimental: {
-    middlewarePrefetch: 'flexible',
-  },
-  // Redirects (additional to middleware)
-  async redirects() {
-    return [
-      {
-        source: '/elevenlabs',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/elevenlabs/:path*',
-        destination: '/?ref=elevenlabs-:path*',
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;

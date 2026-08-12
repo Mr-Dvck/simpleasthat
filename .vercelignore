@@ -1,0 +1,15 @@
+# Vercel Ignore Rules - Block heavy media and non-app directories
+book/
+Brain/
+knowledge base/
+scratch/
+*.mp4
+*.7z
+*.zip
+*.pdf
+*.mp3
+*.PNG
+*.png
+public/audio/
+public/cover.png
+cover.png

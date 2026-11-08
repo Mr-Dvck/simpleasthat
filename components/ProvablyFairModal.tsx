@@ -24,55 +24,55 @@ export default function ProvablyFairModal({ isOpen, onClose }: ProvablyFairModal
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="glass-panel w-full max-w-lg rounded-3xl p-6 border border-emerald-500/30 shadow-2xl relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
+      <div className="glass-panel w-full max-w-lg rounded-3xl p-5 sm:p-6 border border-emerald-500/30 shadow-2xl relative my-auto max-h-[92vh] overflow-y-auto">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white rounded-full bg-white/5"
+          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white rounded-full bg-white/5 shrink-0"
         >
           <X className="w-4 h-4" />
         </button>
 
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
+        <div className="flex items-center space-x-3 mb-5 sm:mb-6">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center shrink-0">
             <ShieldCheck className="w-6 h-6 text-emerald-400" />
           </div>
           <div>
-            <h3 className="text-lg font-black text-white">SHA-256 Provably Fair Verification</h3>
-            <p className="text-xs text-gray-400 font-mono">Zero House Manipulation Guarantee</p>
+            <h3 className="text-base sm:text-lg font-black text-white">SHA-256 Provably Fair Verification</h3>
+            <p className="text-[11px] sm:text-xs text-gray-400 font-mono">Zero House Manipulation Guarantee</p>
           </div>
         </div>
 
-        <div className="space-y-4 font-mono text-xs">
-          <div className="bg-[#08080c] p-3.5 rounded-2xl border border-white/10">
+        <div className="space-y-3 sm:space-y-4 font-mono text-xs">
+          <div className="bg-[#08080c] p-3 sm:p-3.5 rounded-2xl border border-white/10">
             <span className="text-gray-500 uppercase tracking-wider text-[10px] block mb-1">
               Active Unrevealed Server Seed Hash (SHA-256)
             </span>
             <div className="flex items-center justify-between">
-              <span className="text-emerald-400 font-mono break-all text-[11px] mr-2">
+              <span className="text-emerald-400 font-mono break-all text-[10px] sm:text-[11px] mr-2">
                 {serverSeedHash}
               </span>
               <button
                 onClick={handleCopy}
-                className="p-1.5 bg-white/5 rounded hover:bg-white/10 text-gray-300 flex-none"
+                className="p-1.5 bg-white/5 rounded hover:bg-white/10 text-gray-300 shrink-0"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-[#08080c] p-3.5 rounded-2xl border border-white/10">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+            <div className="bg-[#08080c] p-3 sm:p-3.5 rounded-2xl border border-white/10">
               <span className="text-gray-500 uppercase tracking-wider text-[10px] block mb-1">
                 Client Seed
               </span>
-              <span className="text-cyan-400 font-bold">{clientSeed}</span>
+              <span className="text-cyan-400 font-bold truncate block">{clientSeed}</span>
             </div>
-            <div className="bg-[#08080c] p-3.5 rounded-2xl border border-white/10">
+            <div className="bg-[#08080c] p-3 sm:p-3.5 rounded-2xl border border-white/10">
               <span className="text-gray-500 uppercase tracking-wider text-[10px] block mb-1">
                 Current Nonce
               </span>
-              <span className="text-amber-400 font-bold">{currentNonce}</span>
+              <span className="text-amber-400 font-bold block">{currentNonce}</span>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default function ProvablyFairModal({ isOpen, onClose }: ProvablyFairModal
           </div>
         </div>
 
-        <div className="mt-6 flex justify-end">
+        <div className="mt-5 sm:mt-6 flex justify-end">
           <button
             onClick={onClose}
             className="px-5 py-2.5 bg-emerald-500 text-black font-black text-xs uppercase tracking-wider rounded-xl hover:brightness-110 transition-all"

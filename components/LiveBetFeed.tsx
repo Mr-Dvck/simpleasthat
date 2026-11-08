@@ -75,17 +75,17 @@ export default function LiveBetFeed({ bets }: LiveBetFeedProps) {
 
       {/* Feed Table */}
       <div className="mt-3 overflow-x-auto -mx-1 px-1 touch-pan-x">
-        <table className="w-full text-left border-collapse min-w-[360px] sm:min-w-full">
+        <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="text-[10px] uppercase font-mono text-gray-500 border-b border-white/5">
-              <th className="pb-2 pl-2">Game</th>
+            <tr className="text-[9px] sm:text-[10px] uppercase font-mono text-gray-500 border-b border-white/5">
+              <th className="pb-2 pl-1 sm:pl-2">Game</th>
               <th className="pb-2">Player</th>
               <th className="pb-2 text-right">Wager</th>
-              <th className="pb-2 text-right">Multiplier</th>
-              <th className="pb-2 text-right pr-2">Payout</th>
+              <th className="pb-2 text-right">Mult</th>
+              <th className="pb-2 text-right pr-1 sm:pr-2">Payout</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5 font-mono text-xs">
+          <tbody className="divide-y divide-white/5 font-mono text-[10px] sm:text-xs">
             {filteredBets.length === 0 ? (
               <tr>
                 <td colSpan={5} className="py-6 text-center text-gray-500 text-xs font-mono">
@@ -95,15 +95,17 @@ export default function LiveBetFeed({ bets }: LiveBetFeedProps) {
             ) : (
               filteredBets.slice(0, 8).map((b) => (
                 <tr key={b.id} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="py-2 sm:py-2.5 pl-2 font-bold text-gray-300 flex items-center space-x-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
-                    <span>{b.game}</span>
+                  <td className="py-2 sm:py-2.5 pl-1 sm:pl-2 font-bold text-gray-300 whitespace-nowrap">
+                    <span className="inline-flex items-center space-x-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                      <span>{b.game}</span>
+                    </span>
                   </td>
-                  <td className="py-2 sm:py-2.5 text-gray-400 truncate max-w-[90px] sm:max-w-none">{b.player}</td>
-                  <td className="py-2 sm:py-2.5 text-right font-bold text-gray-300">${b.bet.toFixed(2)}</td>
-                  <td className="py-2 sm:py-2.5 text-right font-bold text-cyan-400">{b.multiplier.toFixed(2)}x</td>
+                  <td className="py-2 sm:py-2.5 text-gray-400 whitespace-nowrap">{b.player}</td>
+                  <td className="py-2 sm:py-2.5 text-right font-bold text-gray-300 whitespace-nowrap">${b.bet.toFixed(2)}</td>
+                  <td className="py-2 sm:py-2.5 text-right font-bold text-cyan-400 whitespace-nowrap">{b.multiplier.toFixed(2)}x</td>
                   <td
-                    className={`py-2 sm:py-2.5 text-right pr-2 font-black ${
+                    className={`py-2 sm:py-2.5 text-right pr-1 sm:pr-2 font-black whitespace-nowrap ${
                       b.isWin ? 'text-emerald-400 glow-gold' : 'text-gray-500'
                     }`}
                   >

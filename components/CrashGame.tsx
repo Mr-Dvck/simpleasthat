@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Rocket, ShieldCheck, Zap } from 'lucide-react';
 import VectorButton from '@/components/VectorButton';
+import { computeCrashOutcome } from '@/lib/provablyFair';
 
 interface CrashGameProps {
   balance: number;
@@ -20,9 +21,9 @@ export default function CrashGame({
   onBetPlaced,
   onWin,
   onOpenFairModal,
-  serverSeed,
-  clientSeed,
-  nonce,
+  serverSeed = 'a9f4e2c81b703d56f182e4a09c3b7d128f6e0a4c2d8b1937e5c0a2f4d6b8e103',
+  clientSeed = 'simple-as-that-seed-2026',
+  nonce = 1,
   onIncrementNonce,
 }: CrashGameProps) {
   const [betAmount, setBetAmount] = useState<number>(25.0);
@@ -35,20 +36,12 @@ export default function CrashGame({
   const requestRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
 
-  // Generate SHA-256 provably fair crash point
-  const calculateCrashPoint = () => {
-    const r = Math.random();
-    // 3% instant crash at 1.00x house edge, heavy tail distribution
-    if (r < 0.03) return 1.0;
-    const point = 0.99 / (1 - r);
-    return Math.max(1.01, Math.min(100.0, Math.floor(point * 100) / 100));
-  };
-
   const handleStartGame = () => {
     if (gameState === 'running') return;
     if (!onBetPlaced(betAmount)) return;
 
-    const targetCrash = calculateCrashPoint();
+    const usedNonce = onIncrementNonce ? onIncrementNonce() : nonce;
+    const { crashPoint: targetCrash } = computeCrashOutcome(serverSeed, clientSeed, usedNonce);
     setCrashPoint(targetCrash);
     setGameState('running');
     setCurrentMultiplier(1.0);
@@ -117,7 +110,7 @@ export default function CrashGame({
               <span>CRASH</span>
               <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono">FLAGSHIP</span>
             </h2>
-            <p className="text-[10px] sm:text-xs text-gray-400 font-mono truncate">Real-time Multiplier Rocket • 99% RTP</p>
+            <p className="text-[10px] sm:text-xs text-gray-400 font-mono">Real-time Multiplier Rocket • 99% RTP</p>
           </div>
         </div>
         <VectorButton

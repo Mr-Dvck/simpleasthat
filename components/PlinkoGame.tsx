@@ -208,9 +208,16 @@ export default function PlinkoGame({
       }
       setSessionProfitTarget((prev) => prev + payout);
 
-      // 3. Bucket compression & screen micro-shake
-      setActiveBucketHit(ball.bucketIndex);
-      setTimeout(() => setActiveBucketHit((curr) => (curr === ball.bucketIndex ? null : curr)), 260);
+      // 3. Bucket compression & screen micro-shake (mapped safely if rows changed mid-flight)
+      const mappedBucketIndex =
+        ball.rows === rows
+          ? ball.bucketIndex
+          : Math.min(rows, Math.round((ball.bucketIndex / ball.rows) * rows));
+      setActiveBucketHit(mappedBucketIndex);
+      setTimeout(
+        () => setActiveBucketHit((curr) => (curr === mappedBucketIndex ? null : curr)),
+        260
+      );
 
       if (ball.multiplier >= 2.0) {
         setShakeLevel('mega');
@@ -254,7 +261,7 @@ export default function PlinkoGame({
         ...prev.slice(0, 7),
       ]);
     },
-    [emitParticles, onWin]
+    [emitParticles, onWin, rows]
   );
 
   // Core Sub-100ms Ball Drop Trigger (supports Real Balance & Instant Free Demo Play)
@@ -269,7 +276,7 @@ export default function PlinkoGame({
         const placed = onBetPlaced(effectiveBet);
         if (!placed) return false;
       } else {
-        setDemoCredits((prev) => Math.max(0, prev - effectiveBet));
+        setDemoCredits((prev) => (prev < effectiveBet ? 10000 - effectiveBet : prev - effectiveBet));
       }
 
       soundEngine.playBetTrigger(isInstantReRoll);
@@ -378,21 +385,21 @@ export default function PlinkoGame({
       const topMargin = 28;
       const bottomMargin = 26;
       const usableH = ch - topMargin - bottomMargin;
-      const rowSpacing = usableH / rows;
-      const maxCols = rows + 1;
       const padX = 28;
       const usableW = cw - padX * 2;
-      const colSpacing = usableW / rows;
 
-      // Helper to get exact peg coordinates (row r has r + 3 pegs, or r + 2 pegs so each bounce chooses L/R)
-      // Standard Plinko pyramid: row r (0..rows-1) has (r + 3) pegs centered horizontally
-      const getPegPos = (r: number, c: number) => {
+      // Helper to get exact peg coordinates for any row count (supports mid-flight row switches cleanly)
+      const getPegPos = (r: number, c: number, forRows: PlinkoRows = rows) => {
+        const rSpacing = usableH / forRows;
+        const cSpacing = usableW / forRows;
         const pegsInRow = r + 3;
-        const rowWidth = (pegsInRow - 1) * colSpacing * 0.88;
+        const rowWidth = (pegsInRow - 1) * cSpacing * 0.88;
         const startX = cw / 2 - rowWidth / 2;
         return {
-          x: startX + c * colSpacing * 0.88,
-          y: topMargin + (r + 0.5) * rowSpacing,
+          x: startX + c * cSpacing * 0.88,
+          y: topMargin + (r + 0.5) * rSpacing,
+          rSpacing,
+          cSpacing,
         };
       };
 
@@ -431,7 +438,11 @@ export default function PlinkoGame({
       // 3. Draw & decay Peg Shockwave Flashes
       for (let i = pegFlashesRef.current.length - 1; i >= 0; i--) {
         const pf = pegFlashesRef.current[i];
-        const pos = getPegPos(pf.row, pf.col);
+        if (pf.rows !== rows || pf.row >= rows) {
+          pegFlashesRef.current.splice(i, 1);
+          continue;
+        }
+        const pos = getPegPos(pf.row, pf.col, pf.rows);
         ctx.save();
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, pf.radius, 0, Math.PI * 2);
@@ -453,6 +464,8 @@ export default function PlinkoGame({
       for (let i = activeBalls.length - 1; i >= 0; i--) {
         const b = activeBalls[i];
         const targetRow = b.currentRow;
+        const bRowSpacing = usableH / b.rows;
+        const bColSpacing = usableW / b.rows;
 
         // Calculate cumulative right-turns up to targetRow
         let rightCount = 0;
@@ -467,8 +480,8 @@ export default function PlinkoGame({
         if (targetRow < b.rows) {
           // Ball is heading toward peg gap in row `targetRow`
           const pegCol = rightCount + 1;
-          const pegPos = getPegPos(targetRow, pegCol);
-          const dirOffset = b.directions[targetRow] === 1 ? colSpacing * 0.44 : -colSpacing * 0.44;
+          const pegPos = getPegPos(targetRow, pegCol, b.rows);
+          const dirOffset = b.directions[targetRow] === 1 ? bColSpacing * 0.44 : -bColSpacing * 0.44;
           targetX = pegPos.x + dirOffset * 0.55;
           targetY = pegPos.y;
         } else {
@@ -478,7 +491,7 @@ export default function PlinkoGame({
           targetY = ch - 10;
         }
 
-        const speedY = Math.max(4.2, rowSpacing * 0.34);
+        const speedY = Math.max(4.2, bRowSpacing * 0.34);
         b.y += speedY;
         b.x += (targetX - b.x) * 0.38;
 
@@ -489,14 +502,16 @@ export default function PlinkoGame({
         if (b.y >= targetY) {
           if (b.currentRow < b.rows) {
             const hitCol = rightCount + 1;
-            pegFlashesRef.current.push({
-              row: b.currentRow,
-              col: hitCol,
-              rows: b.rows,
-              alpha: 0.95,
-              radius: pegRadius + 2,
-              color: b.color,
-            });
+            if (b.rows === rows) {
+              pegFlashesRef.current.push({
+                row: b.currentRow,
+                col: hitCol,
+                rows: b.rows,
+                alpha: 0.95,
+                radius: pegRadius + 2,
+                color: b.color,
+              });
+            }
             const telemetry = soundEngine.playPegBounce(b.currentRow, streakRef.current);
             setPitchInfo(telemetry);
             b.currentRow += 1;
@@ -779,7 +794,7 @@ export default function PlinkoGame({
         {/* Responsive Multiplier Bucket Rack */}
         <div
           data-testid="plinko-bucket-rack"
-          className="px-1.5 sm:px-4 pb-2.5 pt-1 grid gap-0.5 sm:gap-1"
+          className="px-0.5 sm:px-4 pb-2.5 pt-1 grid gap-[1px] sm:gap-1"
           style={{
             gridTemplateColumns: `repeat(${currentMultipliers.length}, minmax(0, 1fr))`,
           }}
@@ -790,17 +805,29 @@ export default function PlinkoGame({
             const isMid = mult >= 1.5 && mult < 10;
             const isEven = mult >= 1.0 && mult < 1.5;
 
+            const mobileLabel =
+              rows === 16
+                ? mult >= 1000
+                  ? '1K'
+                  : mult >= 100
+                  ? `${mult}`
+                  : mult < 1
+                  ? `.${Math.round(mult * 10)}`
+                  : `${mult}`
+                : `${mult}x`;
+
             return (
               <div
                 key={`${rows}-${risk}-${idx}`}
                 data-bucket-index={idx}
+                data-multiplier={mult}
                 className={[
-                  'flex flex-col items-center justify-center rounded-lg border py-1 sm:py-1.5 px-0.5 font-mono font-black text-center select-none transition-all duration-150',
+                  'flex flex-col items-center justify-center rounded-md sm:rounded-lg border py-1 sm:py-1.5 px-0 font-mono font-black text-center select-none transition-all duration-150',
                   rows === 16
-                    ? 'text-[7px] sm:text-[10px]'
+                    ? 'text-[5.5px] sm:text-[10px] tracking-tighter'
                     : rows === 12
-                    ? 'text-[8px] sm:text-[11px]'
-                    : 'text-[10px] sm:text-xs',
+                    ? 'text-[7px] sm:text-[11px] tracking-tight'
+                    : 'text-[9px] sm:text-xs',
                   isHigh
                     ? 'bg-gradient-to-b from-amber-500/30 to-rose-600/30 border-amber-400/60 text-amber-200'
                     : isMid
@@ -811,7 +838,8 @@ export default function PlinkoGame({
                   isHit ? 'scale-110 brightness-150 shadow-[0_0_16px_rgba(251,191,36,0.75)] translate-y-0.5' : '',
                 ].join(' ')}
               >
-                <span className="leading-none">{mult}x</span>
+                <span className="leading-none sm:hidden">{mobileLabel}</span>
+                <span className="leading-none hidden sm:inline">{mult}x</span>
               </div>
             );
           })}
@@ -829,15 +857,17 @@ export default function PlinkoGame({
             </span>
             <span className="text-[10px] font-mono text-cyan-400 uppercase">{risk} volatility</span>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
             {(['low', 'medium', 'high'] as PlinkoRisk[]).map((r) => (
               <VectorButton
                 key={r}
                 size="sm"
+                fullWidth
                 variant={r === 'high' ? 'rose' : r === 'medium' ? 'amber' : 'cyan'}
                 activeSelected={risk === r}
                 onClick={() => setRisk(r)}
                 data-testid={`risk-btn-${r}`}
+                className="px-1 sm:px-3"
               >
                 <span>{r.toUpperCase()}</span>
               </VectorButton>
@@ -859,10 +889,12 @@ export default function PlinkoGame({
               <VectorButton
                 key={rowVal}
                 size="sm"
+                fullWidth
                 variant={rows === rowVal ? 'cyan' : 'ghost'}
                 activeSelected={rows === rowVal}
                 onClick={() => setRows(rowVal)}
                 data-testid={`rows-btn-${rowVal}`}
+                className="px-1 sm:px-3"
               >
                 <span>{rowVal}R</span>
               </VectorButton>
@@ -870,10 +902,12 @@ export default function PlinkoGame({
             {/* Explicit Disabled Vector Button with Lock Glyph for VIP 24R Tier */}
             <VectorButton
               size="sm"
+              fullWidth
               variant="ghost"
               disabled={true}
               title="VIP Diamond Tier Required"
               data-testid="rows-btn-locked"
+              className="px-1 sm:px-3 text-[10px] sm:text-xs"
             >
               <span>24R</span>
             </VectorButton>
@@ -885,20 +919,21 @@ export default function PlinkoGame({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 mt-3">
         {/* Wager Input & Quick Chips */}
         <div className="lg:col-span-5 bg-[#0a0a0f] p-3 rounded-2xl border border-white/10 flex flex-col justify-between">
-          <div className="flex items-center justify-between mb-1.5">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
             <label
               htmlFor="plinko-bet-input"
               className="text-[11px] font-bold text-gray-300 uppercase tracking-wider"
             >
               {playMode === 'demo' ? 'Demo Wager ($)' : 'Bet Amount ($)'}
             </label>
-            <button
-              type="button"
+            <VectorButton
+              variant="ghost"
+              size="xs"
               onClick={() => setPlayMode(playMode === 'demo' ? 'real' : 'demo')}
-              className="text-[10px] font-mono font-bold text-cyan-400 hover:underline"
+              className="text-[10px] font-mono text-cyan-400 min-h-[30px] px-2 py-1"
             >
-              {playMode === 'demo' ? 'Switch to Real Balance' : 'Try $0 Free Demo'}
-            </button>
+              <span>{playMode === 'demo' ? 'Real Mode' : 'Try $0 Demo'}</span>
+            </VectorButton>
           </div>
 
           <div className="flex items-center gap-1.5">

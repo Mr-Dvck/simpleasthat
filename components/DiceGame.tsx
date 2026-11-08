@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Dices, ShieldCheck, ArrowRightLeft } from 'lucide-react';
 import VectorButton from '@/components/VectorButton';
+import { computeDiceOutcome } from '@/lib/provablyFair';
 
 interface DiceGameProps {
   balance: number;
@@ -20,9 +21,9 @@ export default function DiceGame({
   onBetPlaced,
   onWin,
   onOpenFairModal,
-  serverSeed,
-  clientSeed,
-  nonce,
+  serverSeed = 'a9f4e2c81b703d56f182e4a09c3b7d128f6e0a4c2d8b1937e5c0a2f4d6b8e103',
+  clientSeed = 'simple-as-that-seed-2026',
+  nonce = 1,
   onIncrementNonce,
 }: DiceGameProps) {
   const [betAmount, setBetAmount] = useState<number>(10.0);
@@ -41,8 +42,8 @@ export default function DiceGame({
   const handleRoll = () => {
     if (!onBetPlaced(betAmount)) return;
 
-    // Generate Provably Fair Roll 0.00 to 99.99
-    const roll = Math.floor(Math.random() * 10000) / 100;
+    const usedNonce = onIncrementNonce ? onIncrementNonce() : nonce;
+    const { roll } = computeDiceOutcome(serverSeed, clientSeed, usedNonce);
     setLastRoll(roll);
 
     const isWin = mode === 'over' ? roll > targetNumber : roll < targetNumber;
@@ -71,7 +72,7 @@ export default function DiceGame({
               <span>CRYPTO DICE</span>
               <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">99% RTP</span>
             </h2>
-            <p className="text-[10px] sm:text-xs text-gray-400 font-mono truncate">Adjustable Win Chance • Instant Roll</p>
+            <p className="text-[10px] sm:text-xs text-gray-400 font-mono">Adjustable Win Chance • Instant Roll</p>
           </div>
         </div>
         <VectorButton

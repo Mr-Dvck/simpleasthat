@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShieldCheck, X, Copy, Check, RefreshCw, Sparkles } from 'lucide-react';
 import VectorButton from '@/components/VectorButton';
 import {
@@ -35,6 +35,14 @@ export default function ProvablyFairModal({
   const [verifyNonce, setVerifyNonce] = useState<number>(nonce);
   const [verifyRows, setVerifyRows] = useState<PlinkoRows>(12);
   const [verifyRisk, setVerifyRisk] = useState<PlinkoRisk>('medium');
+
+  useEffect(() => {
+    setDraftClientSeed(clientSeed);
+  }, [clientSeed]);
+
+  useEffect(() => {
+    setVerifyNonce(nonce > 1 ? nonce - 1 : nonce);
+  }, [nonce, isOpen]);
 
   if (!isOpen) return null;
 

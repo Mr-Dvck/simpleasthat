@@ -1,0 +1,106 @@
+[     789ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.simple-as-that.net/feed.xml?_rsc=5CB68i4pnAekjehf:0
+[  776492ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  776591ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  784127ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  784154ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  794054ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  794078ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  794940ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3010/api/posts/create:0
+[  803652ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  803721ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  812636ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  812876ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  812896ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  813494ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3010/api/posts/create:0
+[  814212ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  815788ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  817364ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  818926ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  820495ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  822083ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  823655ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  825224ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[  827519ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  827530ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1000816ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1000880ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1009479ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1009537ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1048748ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1049185ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1049204ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1108184ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1108205ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1108978ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1108992ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1110942ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1110957ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1111084ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3010/api/checkout/complete:0
+[ 1128404ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1128420ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 1128701ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1130267ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1131828ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1133387ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1134949ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1136515ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1138075ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1139636ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/posts/preview-stay-test-missing:0
+[ 1280601ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.simple-as-that.net/feed.xml?_rsc=5CB68i4pnAekjehf:0
+[ 1281663ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ https://www.simple-as-that.net/api/posts/create:0
+[ 2895113ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 2895224ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 2941621ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.simple-as-that.net/feed.xml?_rsc=jVYLgLRyZRaLGpQ7:0
+[ 2997922ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.simple-as-that.net/feed.xml?_rsc=jVYLgLRyZRaLGpQ7:0
+[ 3171850ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3171938ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3172952ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3172980ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3173700ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3173719ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3312353ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3312369ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3313711ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3313727ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3342686ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3342703ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3349367ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3349380ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3350670ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3350693ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3366035ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3366054ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3700164ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3700237ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3734331ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3734381ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3739549ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3739606ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3765611ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3765661ms] [LOG] [Fast Refresh] done in 82ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3784792ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3784835ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3784885ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3784944ms] [LOG] [Fast Refresh] done in 44ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3784965ms] [LOG] [Fast Refresh] done in 44ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3824353ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3824398ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3824812ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3824838ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3825897ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3825914ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3848615ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3848679ms] [LOG] [Fast Refresh] done in 37ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3855965ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3856000ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3856035ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3856654ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3856674ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3857048ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3857068ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3865178ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3865209ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3865623ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3865646ms] [LOG] [HMR] connected @ http://localhost:3010/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[ 3931795ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.simple-as-that.net/feed.xml?_rsc=5CB68i4pnAekjehf:0
+[ 3932365ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.simple-as-that.net/feed.xml?_rsc=5CB68i4pnAekjehf:0

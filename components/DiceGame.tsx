@@ -2,15 +2,29 @@
 
 import React, { useState } from 'react';
 import { Dices, ShieldCheck, ArrowRightLeft } from 'lucide-react';
+import VectorButton from '@/components/VectorButton';
 
 interface DiceGameProps {
   balance: number;
   onBetPlaced: (amount: number) => boolean;
-  onWin: (payout: number) => void;
+  onWin: (payout: number, multiplier?: number, betAmount?: number, gameLabel?: string) => void;
   onOpenFairModal: () => void;
+  serverSeed?: string;
+  clientSeed?: string;
+  nonce?: number;
+  onIncrementNonce?: () => number;
 }
 
-export default function DiceGame({ balance, onBetPlaced, onWin, onOpenFairModal }: DiceGameProps) {
+export default function DiceGame({
+  balance,
+  onBetPlaced,
+  onWin,
+  onOpenFairModal,
+  serverSeed,
+  clientSeed,
+  nonce,
+  onIncrementNonce,
+}: DiceGameProps) {
   const [betAmount, setBetAmount] = useState<number>(10.0);
   const [targetNumber, setTargetNumber] = useState<number>(50);
   const [mode, setMode] = useState<'over' | 'under'>('over');
@@ -37,7 +51,7 @@ export default function DiceGame({ balance, onBetPlaced, onWin, onOpenFairModal 
       const winVal = betAmount * multiplier;
       setLastResult('win');
       setPayout(winVal);
-      onWin(winVal);
+      onWin(winVal, multiplier, betAmount, 'DICE');
     } else {
       setLastResult('loss');
       setPayout(0);
@@ -45,32 +59,34 @@ export default function DiceGame({ balance, onBetPlaced, onWin, onOpenFairModal 
   };
 
   return (
-    <div className="w-full glass-panel rounded-3xl p-4 sm:p-6 border border-white/10 shadow-2xl relative overflow-hidden">
+    <div className="w-full glass-panel rounded-3xl p-3.5 sm:p-6 border border-white/10 shadow-2xl relative overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-white/10">
+      <div className="flex items-center justify-between pb-3.5 sm:pb-6 border-b border-white/10">
         <div className="flex items-center space-x-2.5 sm:space-x-3">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-purple-500 to-amber-500 flex items-center justify-center shadow-lg shadow-purple-500/20 shrink-0">
             <Dices className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
           <div>
-            <h2 className="text-lg sm:text-xl font-black tracking-tight text-white flex items-center space-x-2">
+            <h2 className="text-base sm:text-xl font-black tracking-tight text-white flex items-center space-x-2">
               <span>CRYPTO DICE</span>
               <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">99% RTP</span>
             </h2>
-            <p className="text-[11px] sm:text-xs text-gray-400 font-mono">Adjustable Win Chance • Instant Roll</p>
+            <p className="text-[10px] sm:text-xs text-gray-400 font-mono truncate">Adjustable Win Chance • Instant Roll</p>
           </div>
         </div>
-        <button
+        <VectorButton
+          variant="ghost"
+          size="xs"
           onClick={onOpenFairModal}
-          className="flex items-center space-x-1 sm:space-x-1.5 text-xs text-gray-400 hover:text-emerald-400 transition-colors font-mono shrink-0"
+          className="font-mono text-gray-400 hover:text-emerald-400"
         >
-          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
           <span className="hidden sm:inline">SHA-256 Verified</span>
-        </button>
+        </VectorButton>
       </div>
 
       {/* Roll Viewport */}
-      <div className="my-4 sm:my-6 h-40 sm:h-48 w-full rounded-2xl bg-[#08080c] border border-white/5 relative flex flex-col items-center justify-center shadow-inner">
+      <div className="my-3.5 sm:my-6 h-40 sm:h-48 w-full rounded-2xl bg-[#08080c] border border-white/5 relative flex flex-col items-center justify-center shadow-inner">
         {lastRoll !== null ? (
           <div className="text-center animate-pulse px-4">
             <span
@@ -99,7 +115,7 @@ export default function DiceGame({ balance, onBetPlaced, onWin, onOpenFairModal 
       </div>
 
       {/* Target Slider Control */}
-      <div className="bg-[#0c0c12] p-4 sm:p-5 rounded-2xl border border-white/10 mb-4 sm:mb-6">
+      <div className="bg-[#0c0c12] p-3.5 sm:p-5 rounded-2xl border border-white/10 mb-3.5 sm:mb-6">
         <div className="flex items-center justify-between text-xs font-bold font-mono text-gray-300 mb-3">
           <span>Target: {targetNumber}</span>
           <span className="text-cyan-400">Win: {winChance.toFixed(2)}%</span>
@@ -122,40 +138,71 @@ export default function DiceGame({ balance, onBetPlaced, onWin, onOpenFairModal 
 
       {/* Bet Controls & Roll Trigger */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+        {/* Bet Amount */}
         <div className="bg-[#0c0c12] p-3 sm:p-3.5 rounded-2xl border border-white/10">
           <label className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1.5">
             Bet Amount ($)
           </label>
-          <input
-            type="number"
-            min="1"
-            max={balance}
-            value={betAmount}
-            onChange={(e) => setBetAmount(Math.max(1, parseFloat(e.target.value) || 0))}
-            className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-base sm:text-sm font-mono font-bold text-white focus:outline-none focus:border-purple-500"
-          />
+          <div className="flex items-center space-x-1.5 sm:space-x-2">
+            <input
+              type="number"
+              min="1"
+              max={balance}
+              value={betAmount}
+              onChange={(e) => setBetAmount(Math.max(1, parseFloat(e.target.value) || 0))}
+              className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-base sm:text-sm font-mono font-bold text-white focus:outline-none focus:border-purple-500"
+            />
+            <VectorButton
+              variant="ghost"
+              size="xs"
+              onClick={() => setBetAmount((b) => Math.max(1, Math.floor(b / 2)))}
+              showLockGlyph={false}
+              className="px-2 min-w-[36px]"
+            >
+              1/2
+            </VectorButton>
+            <VectorButton
+              variant="ghost"
+              size="xs"
+              onClick={() => setBetAmount((b) => Math.min(balance, b * 2))}
+              showLockGlyph={false}
+              className="px-2 min-w-[36px]"
+            >
+              2x
+            </VectorButton>
+          </div>
         </div>
 
-        <div className="bg-[#0c0c12] p-3 sm:p-3.5 rounded-2xl border border-white/10">
+        {/* Direction Toggle */}
+        <div className="bg-[#0c0c12] p-3 sm:p-3.5 rounded-2xl border border-white/10 flex flex-col justify-between">
           <label className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1.5">
             Roll Direction
           </label>
-          <button
+          <VectorButton
+            variant="cyan"
+            size="md"
+            fullWidth
             onClick={() => setMode(mode === 'over' ? 'under' : 'over')}
-            className="w-full flex items-center justify-center space-x-2 bg-white/5 border border-white/10 py-2 sm:py-2.5 rounded-xl text-xs font-bold text-gray-200 hover:bg-white/10 transition-all"
           >
             <ArrowRightLeft className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
             <span>ROLL {mode.toUpperCase()} {targetNumber}</span>
-          </button>
+          </VectorButton>
         </div>
 
-        <button
-          onClick={handleRoll}
-          disabled={betAmount > balance || betAmount <= 0}
-          className="w-full py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-lg shadow-purple-500/30 hover:brightness-110 active:scale-98 transition-all disabled:opacity-50"
-        >
-          ROLL DICE (${profitOnWin.toFixed(2)})
-        </button>
+        {/* Roll Dice Button */}
+        <div className="flex items-end">
+          <VectorButton
+            variant="purple"
+            size="lg"
+            fullWidth
+            onClick={handleRoll}
+            disabled={betAmount > balance || betAmount <= 0}
+            className="shadow-xl shadow-purple-500/30"
+          >
+            <Dices className="w-4 h-4 shrink-0" />
+            <span>ROLL DICE (${profitOnWin.toFixed(2)})</span>
+          </VectorButton>
+        </div>
       </div>
     </div>
   );

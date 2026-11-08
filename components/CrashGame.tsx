@@ -1,16 +1,30 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Rocket, ShieldCheck, Zap, AlertTriangle, TrendingUp, RefreshCw } from 'lucide-react';
+import { Rocket, ShieldCheck, Zap } from 'lucide-react';
+import VectorButton from '@/components/VectorButton';
 
 interface CrashGameProps {
   balance: number;
   onBetPlaced: (amount: number) => boolean;
-  onWin: (payout: number) => void;
+  onWin: (payout: number, multiplier?: number, betAmount?: number, gameLabel?: string) => void;
   onOpenFairModal: () => void;
+  serverSeed?: string;
+  clientSeed?: string;
+  nonce?: number;
+  onIncrementNonce?: () => number;
 }
 
-export default function CrashGame({ balance, onBetPlaced, onWin, onOpenFairModal }: CrashGameProps) {
+export default function CrashGame({
+  balance,
+  onBetPlaced,
+  onWin,
+  onOpenFairModal,
+  serverSeed,
+  clientSeed,
+  nonce,
+  onIncrementNonce,
+}: CrashGameProps) {
   const [betAmount, setBetAmount] = useState<number>(25.0);
   const [autoCashout, setAutoCashout] = useState<number>(2.0);
   const [gameState, setGameState] = useState<'idle' | 'running' | 'cashed_out' | 'crashed'>('idle');
@@ -81,7 +95,7 @@ export default function CrashGame({ balance, onBetPlaced, onWin, onOpenFairModal
     const winVal = betAmount * mult;
     setPayoutAmount(winVal);
     setGameState('cashed_out');
-    onWin(winVal);
+    onWin(winVal, mult, betAmount, 'CRASH');
   };
 
   useEffect(() => {
@@ -91,32 +105,34 @@ export default function CrashGame({ balance, onBetPlaced, onWin, onOpenFairModal
   }, []);
 
   return (
-    <div className="w-full glass-panel rounded-3xl p-4 sm:p-6 border border-white/10 shadow-2xl relative overflow-hidden">
+    <div className="w-full glass-panel rounded-3xl p-3.5 sm:p-6 border border-white/10 shadow-2xl relative overflow-hidden">
       {/* Game Header */}
-      <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-white/10">
+      <div className="flex items-center justify-between pb-3.5 sm:pb-6 border-b border-white/10">
         <div className="flex items-center space-x-2.5 sm:space-x-3">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 shrink-0">
             <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
           <div>
-            <h2 className="text-lg sm:text-xl font-black tracking-tight text-white flex items-center space-x-2">
+            <h2 className="text-base sm:text-xl font-black tracking-tight text-white flex items-center space-x-2">
               <span>CRASH</span>
               <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono">FLAGSHIP</span>
             </h2>
-            <p className="text-[11px] sm:text-xs text-gray-400 font-mono">Real-time Multiplier Rocket • 99% RTP</p>
+            <p className="text-[10px] sm:text-xs text-gray-400 font-mono truncate">Real-time Multiplier Rocket • 99% RTP</p>
           </div>
         </div>
-        <button
+        <VectorButton
+          variant="ghost"
+          size="xs"
           onClick={onOpenFairModal}
-          className="flex items-center space-x-1 sm:space-x-1.5 text-xs text-gray-400 hover:text-emerald-400 transition-colors font-mono shrink-0"
+          className="font-mono text-gray-400 hover:text-emerald-400"
         >
-          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
           <span className="hidden sm:inline">SHA-256 Verified</span>
-        </button>
+        </VectorButton>
       </div>
 
       {/* Main Viewport & Rocket Visualizer */}
-      <div className="my-4 sm:my-6 h-56 sm:h-64 md:h-80 w-full rounded-2xl bg-[#08080c] border border-white/5 relative flex flex-col items-center justify-center overflow-hidden shadow-inner">
+      <div className="my-3.5 sm:my-6 h-52 sm:h-64 md:h-80 w-full rounded-2xl bg-[#08080c] border border-white/5 relative flex flex-col items-center justify-center overflow-hidden shadow-inner">
         {/* Background Grid & Stars */}
         <div className="absolute inset-0 scanlines opacity-30 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-950/20 via-transparent to-transparent pointer-events-none" />
@@ -165,7 +181,7 @@ export default function CrashGame({ balance, onBetPlaced, onWin, onOpenFairModal
           <label className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1.5">
             Bet Amount ($)
           </label>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1.5 sm:space-x-2">
             <input
               type="number"
               min="1"
@@ -175,20 +191,26 @@ export default function CrashGame({ balance, onBetPlaced, onWin, onOpenFairModal
               disabled={gameState === 'running'}
               className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-base sm:text-sm font-mono font-bold text-white focus:outline-none focus:border-cyan-500"
             />
-            <button
+            <VectorButton
+              variant="ghost"
+              size="xs"
               onClick={() => setBetAmount((b) => Math.max(1, Math.floor(b / 2)))}
               disabled={gameState === 'running'}
-              className="px-2.5 py-2 bg-white/5 rounded-xl text-xs font-bold hover:bg-white/10 text-gray-300 shrink-0"
+              showLockGlyph={false}
+              className="px-2 min-w-[36px]"
             >
               1/2
-            </button>
-            <button
+            </VectorButton>
+            <VectorButton
+              variant="ghost"
+              size="xs"
               onClick={() => setBetAmount((b) => Math.min(balance, b * 2))}
               disabled={gameState === 'running'}
-              className="px-2.5 py-2 bg-white/5 rounded-xl text-xs font-bold hover:bg-white/10 text-gray-300 shrink-0"
+              showLockGlyph={false}
+              className="px-2 min-w-[36px]"
             >
               2x
-            </button>
+            </VectorButton>
           </div>
         </div>
 
@@ -215,20 +237,28 @@ export default function CrashGame({ balance, onBetPlaced, onWin, onOpenFairModal
         {/* Launch / Cashout Trigger Button */}
         <div className="flex items-end">
           {gameState === 'running' ? (
-            <button
+            <VectorButton
+              variant="emerald"
+              size="lg"
+              fullWidth
               onClick={() => handleCashout()}
-              className="w-full py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-black font-black text-sm sm:text-base uppercase tracking-wider shadow-lg shadow-emerald-500/30 hover:brightness-110 active:scale-98 transition-all"
+              className="shadow-xl shadow-emerald-500/30 text-emerald-100"
             >
-              CASHOUT ${(betAmount * currentMultiplier).toFixed(2)}
-            </button>
+              <Zap className="w-4 h-4 fill-current shrink-0 animate-pulse" />
+              <span>CASHOUT ${(betAmount * currentMultiplier).toFixed(2)}</span>
+            </VectorButton>
           ) : (
-            <button
+            <VectorButton
+              variant="cyan"
+              size="lg"
+              fullWidth
               onClick={handleStartGame}
               disabled={betAmount > balance || betAmount <= 0}
-              className="w-full py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-600 to-cyan-500 text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-lg shadow-cyan-500/30 hover:brightness-110 active:scale-98 transition-all disabled:opacity-50 disabled:pointer-events-none"
+              className="shadow-xl shadow-cyan-500/30"
             >
-              PLACE BET (${betAmount.toFixed(2)})
-            </button>
+              <Rocket className="w-4 h-4 shrink-0" />
+              <span>PLACE BET (${betAmount.toFixed(2)})</span>
+            </VectorButton>
           )}
         </div>
       </div>

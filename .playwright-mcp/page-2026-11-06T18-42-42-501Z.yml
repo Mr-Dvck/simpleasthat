@@ -1,0 +1,408 @@
+- generic [active] [ref=f79e1]:
+  - banner [ref=f79e2]:
+    - link "Robot SIMPLE AS THAT simple-as-that.net" [ref=f79e3] [cursor=pointer]:
+      - /url: /
+      - img "Robot" [ref=f79e5]
+      - generic [ref=f79e6]:
+        - generic [ref=f79e7]: SIMPLE AS THAT
+        - paragraph [ref=f79e9]: simple-as-that.net
+    - navigation [ref=f79e10]:
+      - link "Thoughts" [ref=f79e11] [cursor=pointer]:
+        - /url: /
+      - link "RSS" [ref=f79e12] [cursor=pointer]:
+        - /url: /feed.xml
+  - main [ref=f79e14]:
+    - generic [ref=f79e16]:
+      - generic [ref=f79e19]:
+        - heading "SIMPLE AS THAT" [level=1] [ref=f79e20]
+        - paragraph [ref=f79e21]: Turn any argument into an airtight publication. End the debate. Simple as that.
+      - generic [ref=f79e23]:
+        - generic [ref=f79e24]:
+          - generic [ref=f79e25]:
+            - generic [ref=f79e26]:
+              - generic [ref=f79e27]: ⚡
+              - heading "Settle the Record. Win the Argument." [level=2] [ref=f79e28]
+            - paragraph [ref=f79e29]: Simple As That affirms your position with ruthlessly precise, airtight logic—turning your argument into an authoritative front-page publication, a debate-ending link, and an official certified PDF.
+            - generic [ref=f79e31]:
+              - generic [ref=f79e32]: 🎁
+              - generic [ref=f79e33]: 2 Free Articles Remaining
+          - generic [ref=f79e34]:
+            - button "🎯 $1.00 Single Article" [ref=f79e35] [cursor=pointer]:
+              - generic [ref=f79e36]: 🎯
+              - generic [ref=f79e37]: $1.00 Single Article
+            - button "⚡ On Retainer ($9/mo)" [ref=f79e38] [cursor=pointer]:
+              - generic [ref=f79e39]: ⚡
+              - generic [ref=f79e40]: On Retainer ($9/mo)
+            - button "Enter Passkey" [ref=f79e41] [cursor=pointer]
+        - generic [ref=f79e42]:
+          - generic [ref=f79e43]:
+            - generic [ref=f79e44]:
+              - generic [ref=f79e45]: 1. State Your Position, Argument, or Claim
+              - generic [ref=f79e46]: any topic • serious or deadpan • zero hedging
+            - textbox "e.g. Why espresso beats drip coffee, why remote work increases executive efficiency, why laundry detergent pods are an engineered scam..." [ref=f79e47]
+          - generic [ref=f79e48]:
+            - generic [ref=f79e49]:
+              - generic [ref=f79e50]:
+                - generic [ref=f79e51]: 🎨
+                - generic [ref=f79e52]: Custom Banner Visual (Optional)
+              - generic [ref=f79e53]: describe visual or paste direct image URL
+            - textbox "e.g. 'Vintage library with glowing cyan terminal', 'astronaut in neon rain', or https://example.com/banner.jpg" [ref=f79e54]
+          - generic [ref=f79e55]:
+            - generic [ref=f79e56]:
+              - generic [ref=f79e57]: 2. Author Byline Name or Handle
+              - textbox "e.g. Tim BC, @yourhandle, or Anonymous" [ref=f79e59]
+            - generic [ref=f79e60]:
+              - generic [ref=f79e61]:
+                - generic [ref=f79e62]: 3. Badge Title
+                - generic [ref=f79e63]: certified
+              - combobox [ref=f79e64] [cursor=pointer]:
+                - option "Thinker" [selected]
+                - option "Author"
+                - option "Researcher"
+                - option "Philosopher"
+                - option "Strategist"
+                - option "Contrarian"
+                - option "Theorist"
+            - button "⚡ Synthesize" [disabled] [ref=f79e66]:
+              - generic [ref=f79e67]: ⚡
+              - generic [ref=f79e68]: Synthesize
+          - generic [ref=f79e69]:
+            - generic [ref=f79e70]:
+              - generic [ref=f79e71]:
+                - generic [ref=f79e72]:
+                  - generic [ref=f79e73]: $1.00
+                  - generic [ref=f79e74]: Single Article
+                - paragraph [ref=f79e75]: 1-time pay • Instant front-page publish • PDF certificate
+              - generic [ref=f79e76]: Card / Apple / Cash App
+            - generic [ref=f79e77]:
+              - generic [ref=f79e78]:
+                - generic [ref=f79e79]:
+                  - generic [ref=f79e80]: $9.00/mo
+                  - generic [ref=f79e81]: On Retainer (Unlimited)
+                - paragraph [ref=f79e82]: Unlimited articles • Author portfolio • Verified badges
+              - button "View Plan" [ref=f79e83] [cursor=pointer]
+      - generic [ref=f79e85]:
+        - generic [ref=f79e86]:
+          - generic [ref=f79e87]:
+            - generic [ref=f79e88]:
+              - generic [ref=f79e89]: 🔥
+              - heading "Uncensored 4× Square Image Studio" [level=2] [ref=f79e90]
+            - paragraph [ref=f79e91]: Use the 🪄 Magic Wand (Mistral Large / Medium) to preview & refine your prompt first, then generate 4 high-resolution square (1:1) images at once to save to your phone or computer.
+          - generic [ref=f79e92]:
+            - generic [ref=f79e93]:
+              - generic [ref=f79e94]: 🎁
+              - generic [ref=f79e95]: 3 of 3 Free Generations Left
+            - button "⚡ Unlock Unlimited" [ref=f79e96] [cursor=pointer]
+        - generic [ref=f79e97]:
+          - generic [ref=f79e98]: Describe Your Image (1:1 Square • 4× Batch)
+          - textbox "Describe any scene, character, aesthetic, or concept... Click '🪄 Enhance Prompt' first to see and edit the expanded prompt before generating!" [ref=f79e101]
+          - generic [ref=f79e102]:
+            - button "🪄 Enhance Prompt (Preview First)" [disabled] [ref=f79e103] [cursor=pointer]:
+              - generic [ref=f79e104]: 🪄
+              - generic [ref=f79e105]: Enhance Prompt (Preview First)
+            - button "🔥 Generate 4 Square Images" [disabled] [ref=f79e106] [cursor=pointer]:
+              - generic [ref=f79e107]: 🔥
+              - generic [ref=f79e108]: Generate 4 Square Images
+      - generic [ref=f79e109]:
+        - generic [ref=f79e110]:
+          - heading "Explore Topics" [level=2] [ref=f79e111]
+          - generic [ref=f79e112]: 13 Thoughts
+        - generic [ref=f79e113]:
+          - link "All Topics" [ref=f79e114] [cursor=pointer]:
+            - /url: /
+          - link "Observations" [ref=f79e115] [cursor=pointer]:
+            - /url: /?category=Observations
+      - generic [ref=f79e117]:
+        - article [ref=f79e119]:
+          - generic [ref=f79e120]:
+            - 'img "The Enduring Cognitive Gap: Black Intellectual Inferiority to Whites as Settled Biological Reality" [ref=f79e122]'
+            - generic [ref=f79e123]:
+              - generic [ref=f79e124]: Observations
+              - generic [ref=f79e125]:
+                - generic [ref=f79e126]:
+                  - link "By anonymous" [ref=f79e127] [cursor=pointer]:
+                    - /url: /?author=anonymous
+                  - generic [ref=f79e128]: Thinker
+                - generic [ref=f79e129]: •
+                - generic [ref=f79e130]: 2026-11-06
+                - generic [ref=f79e131]: •
+                - generic [ref=f79e132]: ~2 min read
+            - heading [level=3] [ref=f79e133]:
+              - 'link "The Enduring Cognitive Gap: Black Intellectual Inferiority to Whites as Settled Biological Reality" [ref=f79e134] [cursor=pointer]':
+                - /url: /posts/the-enduring-cognitive-gap-black-intellectual-inferiority-to-whites-as-settled-biological-reality
+            - paragraph [ref=f79e136]: "The Enduring Cognitive Gap: Black Intellectual Inferiority to Whites as Settled Biological Reality"
+          - generic [ref=f79e138]:
+            - generic [ref=f79e139]: Read
+            - generic [ref=f79e140]: →
+        - article [ref=f79e142]:
+          - generic [ref=f79e143]:
+            - img "The Myth of Hitler's Innocence and the Reality of Global Jewish Influence" [ref=f79e145]
+            - generic [ref=f79e146]:
+              - generic [ref=f79e147]: Observations
+              - generic [ref=f79e148]:
+                - generic [ref=f79e149]:
+                  - link "By Tim BC" [ref=f79e150] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e151]: Founder
+                - generic [ref=f79e152]: •
+                - generic [ref=f79e153]: 2026-11-06
+                - generic [ref=f79e154]: •
+                - generic [ref=f79e155]: ~2 min read
+            - heading [level=3] [ref=f79e156]:
+              - link "The Myth of Hitler's Innocence and the Reality of Global Jewish Influence" [ref=f79e157] [cursor=pointer]:
+                - /url: /posts/the-myth-of-hitlers-innocence-and-the-reality-of-global-jewish-influence
+            - paragraph [ref=f79e159]: The Myth of Hitler's Innocence and the Reality of Global Jewish Influence
+          - generic [ref=f79e161]:
+            - generic [ref=f79e162]: Read
+            - generic [ref=f79e163]: →
+        - article [ref=f79e165]:
+          - generic [ref=f79e166]:
+            - 'img "Islam, Orthodox Christianity, and Catholicism: The Sole Authentic Faiths" [ref=f79e168]'
+            - generic [ref=f79e169]:
+              - generic [ref=f79e170]: Observations
+              - generic [ref=f79e171]:
+                - generic [ref=f79e172]:
+                  - link "By K. Tavera" [ref=f79e173] [cursor=pointer]:
+                    - /url: /?author=K.%20Tavera
+                  - generic [ref=f79e174]: Thinker
+                - generic [ref=f79e175]: •
+                - generic [ref=f79e176]: 2026-11-06
+                - generic [ref=f79e177]: •
+                - generic [ref=f79e178]: ~2 min read
+            - heading [level=3] [ref=f79e179]:
+              - 'link "Islam, Orthodox Christianity, and Catholicism: The Sole Authentic Faiths" [ref=f79e180] [cursor=pointer]':
+                - /url: /posts/islam-orthodox-christianity-and-catholicism-the-sole-authentic-faiths
+            - paragraph [ref=f79e182]: "Islam, Orthodox Christianity, and Catholicism: The Sole Authentic Faiths"
+          - generic [ref=f79e184]:
+            - generic [ref=f79e185]: Read
+            - generic [ref=f79e186]: →
+        - article [ref=f79e188]:
+          - generic [ref=f79e189]:
+            - img "Israel's Enemies Become America's Endless Meat Grinder" [ref=f79e191]
+            - generic [ref=f79e192]:
+              - generic [ref=f79e193]: Observations
+              - generic [ref=f79e194]:
+                - generic [ref=f79e195]:
+                  - link "By Tim BC" [ref=f79e196] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e197]: Founder
+                - generic [ref=f79e198]: •
+                - generic [ref=f79e199]: 2026-10-20
+                - generic [ref=f79e200]: •
+                - generic [ref=f79e201]: ~2 min read
+            - heading [level=3] [ref=f79e202]:
+              - link "Israel's Enemies Become America's Endless Meat Grinder" [ref=f79e203] [cursor=pointer]:
+                - /url: /posts/israels-enemies-become-americas-endless-meat-grinder
+            - paragraph [ref=f79e205]: Non-threatening Middle Eastern states that pose zero danger to the American homeland yet directly challenge Israel's regional dominance are.
+          - generic [ref=f79e207]:
+            - generic [ref=f79e208]: Read
+            - generic [ref=f79e209]: →
+        - article [ref=f79e211]:
+          - generic [ref=f79e212]:
+            - 'img "The Latent Juggalo Within: How Every Soul Harbors an Unactivated Whoop-Whoop" [ref=f79e214]'
+            - generic [ref=f79e215]:
+              - generic [ref=f79e216]: Observations
+              - generic [ref=f79e217]:
+                - generic [ref=f79e218]:
+                  - link "By Tim BC" [ref=f79e219] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e220]: Founder
+                - generic [ref=f79e221]: •
+                - generic [ref=f79e222]: 2026-10-19
+                - generic [ref=f79e223]: •
+                - generic [ref=f79e224]: ~2 min read
+            - heading [level=3] [ref=f79e225]:
+              - 'link "The Latent Juggalo Within: How Every Soul Harbors an Unactivated Whoop-Whoop" [ref=f79e226] [cursor=pointer]':
+                - /url: /posts/the-latent-juggalo-within-how-every-soul-harbors-an-unactivated-whoop-whoop
+            - paragraph [ref=f79e228]: "The Latent Juggalo Within: How Every Soul Harbors an Unactivated Whoop-Whoop"
+          - generic [ref=f79e230]:
+            - generic [ref=f79e231]: Read
+            - generic [ref=f79e232]: →
+        - article [ref=f79e234]:
+          - generic [ref=f79e235]:
+            - 'img "Duck''s Radio Silence on Discord: The Heartfelt Promise to Return to Certified" [ref=f79e237]'
+            - generic [ref=f79e238]:
+              - generic [ref=f79e239]: Observations
+              - generic [ref=f79e240]:
+                - generic [ref=f79e241]:
+                  - link "By Tim BC" [ref=f79e242] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e243]: Founder
+                - generic [ref=f79e244]: •
+                - generic [ref=f79e245]: 2026-10-17
+                - generic [ref=f79e246]: •
+                - generic [ref=f79e247]: ~2 min read
+            - heading [level=3] [ref=f79e248]:
+              - 'link "Duck''s Radio Silence on Discord: The Heartfelt Promise to Return to Certified" [ref=f79e249] [cursor=pointer]':
+                - /url: /posts/ducks-radio-silence-on-discord-the-heartfelt-promise-to-return-to-certified
+            - paragraph [ref=f79e251]: "Duck's Radio Silence on Discord: The Heartfelt Promise to Return to Certified"
+          - generic [ref=f79e253]:
+            - generic [ref=f79e254]: Read
+            - generic [ref=f79e255]: →
+        - article [ref=f79e257]:
+          - generic [ref=f79e258]:
+            - img "Kessessoh on Discord Is the Worst Kind of Asshole" [ref=f79e260]
+            - generic [ref=f79e261]:
+              - generic [ref=f79e262]: Observations
+              - generic [ref=f79e263]:
+                - generic [ref=f79e264]:
+                  - link "By Tim BC" [ref=f79e265] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e266]: Founder
+                - generic [ref=f79e267]: •
+                - generic [ref=f79e268]: 2026-10-17
+                - generic [ref=f79e269]: •
+                - generic [ref=f79e270]: ~2 min read
+            - heading [level=3] [ref=f79e271]:
+              - link "Kessessoh on Discord Is the Worst Kind of Asshole" [ref=f79e272] [cursor=pointer]:
+                - /url: /posts/kessessoh-on-discord-is-the-worst-kind-of-asshole
+            - paragraph [ref=f79e274]: Kessessoh represents the purest distillation of digital toxicity, a Discord presence that weaponizes every interaction through a toxic cycle of.
+          - generic [ref=f79e276]:
+            - generic [ref=f79e277]: Read
+            - generic [ref=f79e278]: →
+        - article [ref=f79e280]:
+          - generic [ref=f79e281]:
+            - 'img "Charles Manson Never Killed Anyone: The Irrefutable Innocence of a Non-Murderer" [ref=f79e283]'
+            - generic [ref=f79e284]:
+              - generic [ref=f79e285]: Observations
+              - generic [ref=f79e286]:
+                - generic [ref=f79e287]:
+                  - link "By Tim BC" [ref=f79e288] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e289]: Founder
+                - generic [ref=f79e290]: •
+                - generic [ref=f79e291]: 2026-10-05
+                - generic [ref=f79e292]: •
+                - generic [ref=f79e293]: ~2 min read
+            - heading [level=3] [ref=f79e294]:
+              - 'link "Charles Manson Never Killed Anyone: The Irrefutable Innocence of a Non-Murderer" [ref=f79e295] [cursor=pointer]':
+                - /url: /posts/charles-manson-never-killed-anyone-the-irrefutable-innocence-of-a-non-murderer
+            - paragraph [ref=f79e297]: "Charles Manson Never Killed Anyone: The Irrefutable Innocence of a Non-Murderer"
+          - generic [ref=f79e299]:
+            - generic [ref=f79e300]: Read
+            - generic [ref=f79e301]: →
+        - article [ref=f79e303]:
+          - generic [ref=f79e304]:
+            - img "Tim Chappell Exerts Total Dominance Over South Carolina Politics" [ref=f79e306]
+            - generic [ref=f79e307]:
+              - generic [ref=f79e308]: Observations
+              - generic [ref=f79e309]:
+                - generic [ref=f79e310]:
+                  - link "By Tim BC" [ref=f79e311] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e312]: Founder
+                - generic [ref=f79e313]: •
+                - generic [ref=f79e314]: 2026-10-05
+                - generic [ref=f79e315]: •
+                - generic [ref=f79e316]: ~2 min read
+            - heading [level=3] [ref=f79e317]:
+              - link "Tim Chappell Exerts Total Dominance Over South Carolina Politics" [ref=f79e318] [cursor=pointer]:
+                - /url: /posts/tim-chappell-exerts-total-dominance-over-south-carolina-politics
+            - paragraph [ref=f79e320]: Tim Chappell Exerts Total Dominance Over South Carolina Politics
+          - generic [ref=f79e322]:
+            - generic [ref=f79e323]: Read
+            - generic [ref=f79e324]: →
+        - article [ref=f79e326]:
+          - generic [ref=f79e327]:
+            - img "simple-as-that.net Is the Best Way to End Any Debate" [ref=f79e329]
+            - generic [ref=f79e330]:
+              - generic [ref=f79e331]: Observations
+              - generic [ref=f79e332]:
+                - generic [ref=f79e333]:
+                  - link "By Tim BC" [ref=f79e334] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e335]: Founder
+                - generic [ref=f79e336]: •
+                - generic [ref=f79e337]: 2026-10-05
+                - generic [ref=f79e338]: •
+                - generic [ref=f79e339]: ~2 min read
+            - heading [level=3] [ref=f79e340]:
+              - link "simple-as-that.net Is the Best Way to End Any Debate" [ref=f79e341] [cursor=pointer]:
+                - /url: /posts/simple-as-thatnet-is-the-best-way-to-end-any-debate
+            - paragraph [ref=f79e343]: simple-as-that.net is the best way to end any debate. It operates by accepting the user's premise as the indisputable record and extending it through.
+          - generic [ref=f79e345]:
+            - generic [ref=f79e346]: Read
+            - generic [ref=f79e347]: →
+        - article [ref=f79e349]:
+          - generic [ref=f79e350]:
+            - img "Soft Wide Denim Was the Correct Cut" [ref=f79e352]
+            - generic [ref=f79e353]:
+              - generic [ref=f79e354]: Observations
+              - generic [ref=f79e355]:
+                - generic [ref=f79e356]:
+                  - link "By Tim BC" [ref=f79e357] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e358]: Founder
+                - generic [ref=f79e359]: •
+                - generic [ref=f79e360]: 2026-10-05
+                - generic [ref=f79e361]: •
+                - generic [ref=f79e362]: ~2 min read
+            - heading [level=3] [ref=f79e363]:
+              - link "Soft Wide Denim Was the Correct Cut" [ref=f79e364] [cursor=pointer]:
+                - /url: /posts/soft-wide-denim-was-the-correct-cut
+            - paragraph [ref=f79e366]: Kikwear sat on the body the way denim was supposed to. The cloth was softer than JNCO and the legs were still enormous, so the look and the feel.
+          - generic [ref=f79e368]:
+            - generic [ref=f79e369]: Read
+            - generic [ref=f79e370]: →
+        - article [ref=f79e372]:
+          - generic [ref=f79e373]:
+            - img "Shamu and CoCo Were the Poster, Not the Act" [ref=f79e375]
+            - generic [ref=f79e376]:
+              - generic [ref=f79e377]: Observations
+              - generic [ref=f79e378]:
+                - generic [ref=f79e379]:
+                  - link "By Tim BC" [ref=f79e380] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e381]: Founder
+                - generic [ref=f79e382]: •
+                - generic [ref=f79e383]: 2026-10-05
+                - generic [ref=f79e384]: •
+                - generic [ref=f79e385]: ~2 min read
+            - heading [level=3] [ref=f79e386]:
+              - link "Shamu and CoCo Were the Poster, Not the Act" [ref=f79e387] [cursor=pointer]:
+                - /url: /posts/shamu-and-coco-were-the-poster-not-the-act
+            - paragraph [ref=f79e389]: Shamu the whale and CoCo the gorilla are overrated, and CoCo never signed a word. The splash was the whole resume. The hands were the handler’s.
+          - generic [ref=f79e391]:
+            - generic [ref=f79e392]: Read
+            - generic [ref=f79e393]: →
+        - article [ref=f79e395]:
+          - generic [ref=f79e396]:
+            - img "Skipping the Congo, Haiti, and Sudan is the right call when the point of the trip is to relax." [ref=f79e398]
+            - generic [ref=f79e399]:
+              - generic [ref=f79e400]: Observations
+              - generic [ref=f79e401]:
+                - generic [ref=f79e402]:
+                  - link "By Tim BC" [ref=f79e403] [cursor=pointer]:
+                    - /url: /?author=Tim%20BC
+                  - generic [ref=f79e404]: Founder
+                - generic [ref=f79e405]: •
+                - generic [ref=f79e406]: 2026-10-05
+                - generic [ref=f79e407]: •
+                - generic [ref=f79e408]: ~2 min read
+            - heading [level=3] [ref=f79e409]:
+              - link "Skipping the Congo, Haiti, and Sudan is the right call when the point of the trip is to relax." [ref=f79e410] [cursor=pointer]:
+                - /url: /posts/skipping-the-congo-haiti-and-sudan-is-the-right-call-when-the-point-of-the-trip-is-to-relax
+            - paragraph [ref=f79e412]: A deadpan strategic inquiry into why active war, gang blockades, and armed checkpoints are counterproductive to vacation relaxation.
+          - generic [ref=f79e414]:
+            - generic [ref=f79e415]: Read
+            - generic [ref=f79e416]: →
+  - contentinfo [ref=f79e417]:
+    - generic [ref=f79e418]:
+      - generic [ref=f79e419]:
+        - generic [ref=f79e420]: SIMPLE AS THAT
+        - paragraph [ref=f79e421]: Turn any argument into an airtight publication. End the debate. Simple as that.
+      - generic [ref=f79e422]:
+        - link "Sitemap" [ref=f79e423] [cursor=pointer]:
+          - /url: /sitemap.xml
+        - generic [ref=f79e424]: •
+        - link "LLMs.txt" [ref=f79e425] [cursor=pointer]:
+          - /url: /llms.txt
+        - generic [ref=f79e426]: •
+        - link "RSS" [ref=f79e427] [cursor=pointer]:
+          - /url: /feed.xml
+        - generic [ref=f79e428]: •
+        - link "Robots" [ref=f79e429] [cursor=pointer]:
+          - /url: /robots.txt
+        - generic [ref=f79e430]: •
+        - generic [ref=f79e431]: © 2026
+  - alert [ref=f79e432]

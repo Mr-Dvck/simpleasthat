@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '380px',
+      },
       colors: {
         // ElevenLabs 2026 aesthetic palette
         background: 'hsl(var(--background))',

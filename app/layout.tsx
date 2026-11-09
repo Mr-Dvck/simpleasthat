@@ -59,8 +59,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} dark`}>
-      <body className="bg-[#050505] text-gray-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-black overflow-x-hidden">
-        {children}
+      <body className="bg-[#050505] text-gray-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-black overflow-x-hidden relative">
+        {/* FLOWING NEON AURORA BACKGROUND ORBS & HIGH-TECH CYBER MATRIX GRID */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 select-none cyber-matrix-grid">
+          <div className="absolute -top-32 -left-32 w-[650px] h-[650px] rounded-full bg-cyan-500/25 blur-[120px] animate-orb-1" />
+          <div className="absolute top-1/4 -right-36 w-[700px] h-[700px] rounded-full bg-pink-500/20 blur-[130px] animate-orb-2" />
+          <div className="absolute -bottom-24 left-1/3 w-[600px] h-[600px] rounded-full bg-amber-500/18 blur-[110px] animate-orb-3" />
+          <div className="absolute top-2/3 -left-20 w-[550px] h-[550px] rounded-full bg-purple-600/20 blur-[120px] animate-orb-1" />
+        </div>
+
+        <div className="relative z-10 flex-1 flex flex-col">
+          {children}
+        </div>
       </body>
     </html>
   );
